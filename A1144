@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int i, n, t, data[100010] = {0};//初始为0表示未出现
+    cin >> n;
+    for(i = 0; i < n; i++){
+        cin >> t;
+        if(t > 0 && t < 100010)//其他情况直接舍去
+            data[t] = 1;
+    }
+    for(i = 1; i < 100010; i++){
+        if(data[i] == 0){
+            cout << i;
+            break;
+        }
+    }
+    return 0;
+}
+
+//散列查找
